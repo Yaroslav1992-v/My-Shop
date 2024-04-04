@@ -1,9 +1,9 @@
 import React from "react";
-import { Product as ProductProps } from "../../types";
+import { ProductI } from "../../types";
 import { Card, CardBody } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Rating from "../Rating";
-const Product: React.FC<{ product: ProductProps }> = ({ product }) => {
+const Product: React.FC<{ product: ProductI }> = ({ product }) => {
   return (
     <Card className="my-3 p-3 rounded">
       <Link to={`/product/${product._id}`}>

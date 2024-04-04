@@ -1,0 +1,32 @@
+{
+  "name": "my-shop",
+  "version": "1.0.0",
+  "description": "eCommerce application build with the MERN stack",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "build": "rimraf ./build && npx tsc",
+    "dev": "npx nodemon",
+    "start": "npm run build && node/build/main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yaroslav1992-v/My-Shop.git"
+  },
+  "author": "Yaroslav Zhiltsov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yaroslav1992-v/My-Shop/issues"
+  },
+  "homepage": "https://github.com/Yaroslav1992-v/My-Shop#readme",
+  "devDependencies": {
+    "@types/node": "^20.12.3",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.21",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}

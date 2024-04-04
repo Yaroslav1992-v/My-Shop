@@ -1,21 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import products from "../products";
-import {
-  Button,
-  Card,
-  Col,
-  Image,
-  ListGroup,
-  ListGroupItem,
-  Row,
-} from "react-bootstrap";
+import { Button, Card, Col, Image, ListGroup, Row } from "react-bootstrap";
 import Rating from "../components/Rating";
+import { ProductI } from "../types";
+import productsService from "../services/productService";
 
 const ProductScreen = () => {
   const { id: productId } = useParams();
+  const [product, setProduct] = useState<ProductI>();
+  useEffect(() => {
+    const fetchPoduct = async () => {
+      try {
+        if (!productId) {
+          return;
+        }
+        const data = await productsService.fetchProduct(productId);
+        setProduct(data);
+        if (data) {
+          setProduct(data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchPoduct();
+  }, [productId]);
 
-  const product = products.find((p) => p._id === productId);
   return (
     <>
       <Link className="btn btn-light my-3" to={"/"}>
