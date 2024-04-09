@@ -10,3 +10,13 @@ export interface ProductI {
   rating: number;
   numReviews?: number;
 }
+
+export interface FetchQueryData<T> {
+  data: T;
+  isLoading: boolean;
+  error: {
+    data: {
+      message: string;
+    };
+  };
+}
