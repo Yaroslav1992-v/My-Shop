@@ -1,10 +1,19 @@
 import { Link, useParams } from "react-router-dom";
-import { Button, Card, Col, Image, ListGroup, Row } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Col,
+  Form,
+  Image,
+  ListGroup,
+  Row,
+} from "react-bootstrap";
 import Rating from "../components/Rating";
 import { FetchQueryData, ProductI } from "../types";
 import { useGetProductDetailsQuery } from "../store/slices/productApiSlice";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
+import AddToCart from "../components/AddToCart";
 
 const ProductScreen = () => {
   const { id: productId } = useParams();
@@ -50,41 +59,7 @@ const ProductScreen = () => {
                   </ListGroup.Item>
                 </ListGroup>
               </Col>
-              <Col md={3}>
-                <Card>
-                  <ListGroup variant="flush">
-                    <ListGroup.Item>
-                      <Row>
-                        <Col>Price:</Col>
-                        <Col>
-                          <strong>${product.price}</strong>
-                        </Col>
-                      </Row>
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                      <Row>
-                        <Col>Status:</Col>
-                        <Col>
-                          <strong>
-                            {product.countInStock > 0
-                              ? "In Stock"
-                              : "Out Of Stock"}
-                          </strong>
-                        </Col>
-                      </Row>
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                      <Button
-                        className="btn-block"
-                        type="button"
-                        disabled={product.countInStock === 0}
-                      >
-                        Add To Cart
-                      </Button>
-                    </ListGroup.Item>
-                  </ListGroup>
-                </Card>
-              </Col>
+              <AddToCart product={product} />
             </Row>
           )}
         </>

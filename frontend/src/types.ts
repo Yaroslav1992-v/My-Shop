@@ -20,3 +20,7 @@ export interface FetchQueryData<T> {
     };
   };
 }
+
+export interface Cart extends ProductI {
+  qty: number;
+}

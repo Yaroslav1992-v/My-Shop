@@ -3,6 +3,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import { LinkContainer } from "react-router-bootstrap";
+import СartHeaderComponent from "./СartHeaderComponent";
 const Header = () => {
   return (
     <header>
@@ -16,11 +17,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navnar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <LinkContainer to="cart">
-                <Nav.Link href="/cart">
-                  <FaShoppingCart /> Cart
-                </Nav.Link>
-              </LinkContainer>
+              <СartHeaderComponent />
               <LinkContainer to="/login">
                 <Nav.Link href="/login">
                   <FaShoppingCart /> Login
