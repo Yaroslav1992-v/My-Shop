@@ -7,7 +7,9 @@
   "scripts": {
     "build": "rimraf ./build && npx tsc",
     "dev": "npx nodemon",
-    "start": "npm run build && node/build/main"
+    "start": "npm run build && node/build/main",
+    "data:import": "node build/seeder.js",
+    "data:destroy": "node build/seeder.js -d"
   },
   "repository": {
     "type": "git",
@@ -24,9 +26,13 @@
     "ts-node": "^10.9.2"
   },
   "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongoose": "^8.3.0",
+    "rimraf": "^5.0.5"
   }
 }
