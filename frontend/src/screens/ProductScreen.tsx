@@ -1,13 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import {
-  Button,
-  Card,
-  Col,
-  Form,
-  Image,
-  ListGroup,
-  Row,
-} from "react-bootstrap";
+import { Col, Image, ListGroup, Row } from "react-bootstrap";
 import Rating from "../components/Rating";
 import { FetchQueryData, ProductI } from "../types";
 import { useGetProductDetailsQuery } from "../store/slices/productApiSlice";
